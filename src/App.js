@@ -3,13 +3,14 @@ import Cards from './components/Cards.jsx';
 import Navbar from './components/Navbar.jsx';
 import axios from 'axios'
 import { useState } from 'react';
-
+import { Title, Frame } from './components/Styles';
 
 function App() {
   let [cities, setCities] = useState([]) 
+  const API_KEY = '5348c1f32968b89889de66792ec0dc56'
 
   function onSearch (city) {
-    let response = axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5348c1f32968b89889de66792ec0dc56&units=metric`) 
+    let response = axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`) 
       .then(response => response.data)
       .then(r => setCities([...cities, r]))
       .catch(r => ("Ciudad no encontrada"))
@@ -21,9 +22,11 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar onSearch={onSearch}/>
-      <Cards cities={cities} onFilter={onFilter}/>
-      {console.log(cities)}
+      <Frame>
+        <Title>Weather App</Title>
+        <Navbar onSearch={onSearch}/>
+        <Cards cities={cities} onFilter={onFilter}/>
+      </Frame>
     </div>
   );
 }

@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import {Searchbar} from './Styles.jsx'
+import glass from "../images/glass.png";
 
 export default function SearchBar({onSearch}) {
     let [input, setInput] = useState("")
@@ -15,12 +17,14 @@ export default function SearchBar({onSearch}) {
     }
 
     return (
-        <div>
+        <Searchbar>
             <form onSubmit={(e) => onSubmit(e)}>
-                <input type="text" value={input} onChange={(e) => handleChange(e)} placeholder='Enter a city name...'/>
-                <input type="submit" value="Search"/>
+                <input className='bar' type="text" value={input} onChange={(e) => handleChange(e)} placeholder='Enter a city name...' />
                 
+                <button className='submit' type="submit">
+                        <img src={glass} alt="glass" />
+                </button>
             </form>
-        </div>
+        </Searchbar>
     )
 }
