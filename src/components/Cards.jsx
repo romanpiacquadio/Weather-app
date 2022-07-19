@@ -1,13 +1,13 @@
 import React from "react";
 import Card from "./Card.jsx";
-
+import EmptyCard from "./EmptyCard.jsx";
 // [ ciudad1 , ciudad2, ciudad3 ]
 
 // [{ name: Cordoba, wind:20, detail: rainy, tempmax:30, ..... }..., ....]
 
 // wheater[0].main, wind.speed, main.humidity, wheater[0].icon, main.temp_max, main.temp_max
 
-export default function Cards({cities}){
+export default function Cards({cities, onFilter}){
     
     return(
     <div>
@@ -20,6 +20,7 @@ export default function Cards({cities}){
                             icon = {c.weather[0].icon}
                             max = {c.main.temp_max}
                             min = {c.main.temp_min}
+                            onFilter = {onFilter}
                         />)
         }
     </div>
