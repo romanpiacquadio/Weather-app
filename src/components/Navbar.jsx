@@ -7,7 +7,7 @@ export default function Navbar({onSearch}){
 
     return(
         <NavBar>
-            <h3 className="title">Look at how the weather is in your favorite city</h3>
+            <h3 className="title">Look at the weather of your favorite cities</h3>
             <SearchBar onSearch={onSearch}/>
         </NavBar>
         

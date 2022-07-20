@@ -1,6 +1,7 @@
 import './App.css';
 import Cards from './components/Cards.jsx';
 import Navbar from './components/Navbar.jsx';
+import DigitalClock from './components/DigitalClock';
 import axios from 'axios'
 import { useState } from 'react';
 import { Title, Frame } from './components/Styles';
@@ -23,6 +24,7 @@ function App() {
   return (
     <div className="App">
       <Frame>
+        <DigitalClock/>
         <Title>Weather App</Title>
         <Navbar onSearch={onSearch}/>
         <Cards cities={cities} onFilter={onFilter}/>

@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import clima from "../images/clima.jpg";
-import glass from "../images/glass.png";
-
 
 export const Frame = styled.div`
 display: flex;
@@ -37,6 +35,7 @@ export const SingleCard = styled.div`
         background-color: #ED6A5E;
         border-radius: 4px;
         color: white;
+        cursor: pointer;
     }
 
     .button {
@@ -102,9 +101,10 @@ export const Searchbar = styled.div`
         outline-width: 0;
         height: 25px;
         width: 300px;
-        padding-top: 0px;
-        padding-bottom: 0px;
+        padding: 0 0 0 10px;
         margin-right: 5px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
     }
 
     .submit{
@@ -112,11 +112,34 @@ export const Searchbar = styled.div`
         height: 25px;
         padding: 0px;
         border: 0px;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        background-color: #b4b4b4;
+        cursor: pointer; ;
     }
 
     .submit img {
         height: 50%;
         max-width: 100%;
         max-height: 100%;
+    }
+`
+
+export const Clock = styled.div`
+    position: absolute;
+    left: 80%;
+    width:150px;
+    height:150px;
+    border-radius: 50%;
+    background-color: #26a4ed76;
+    display: flex;
+    flex-direction: column;
+
+    div{
+        margin-top: 30%;
+    }
+
+    h2,h4{
+        margin: 0px;
     }
 `
